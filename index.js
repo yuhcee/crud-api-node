@@ -2,6 +2,7 @@
 // import the packages we need
 const express = require('express'); // express for routing
 const bodyParser = require('body-parser');
+const registerArticleRoutes = require('./api/articles');
 
 // CONFIGURE APP
 const app = express();
@@ -33,6 +34,7 @@ app.get('/', function (_, res) {
   res.send('Welcome to our API');
 });
 
+registerArticleRoutes(router);
 app.use('/api', router);
 // START THE SERVER
 // =============================================================================
